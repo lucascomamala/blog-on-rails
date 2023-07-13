@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   after_destroy :decrement_posts_counter
 
   validates :title, presence: true, length: { maximum: 250 }
-  validates_presence_of :content
+  validates_presence_of :text
   validates_numericality_of :comments_counter, :likes_counter, only_integer: true, greater_than_or_equal_to: 0
 
   # Returns the 5 most recent comments for the post
