@@ -1,0 +1,21 @@
+<div class="row m-3 justify-content-center comments-row">
+  <div class="col-md-12 col-lg-9 offset-md-1 show-card">
+    <p class="m-0">
+      <% if !post.comments.empty? %>
+        <% if local_assigns[:full] %>
+          <% post.comments.each do |comment| %>
+            <strong><%= @users.find(comment.user_id).name %>:</strong> <%= comment.content %>
+            <br>
+          <% end %>
+        <% else %>
+          <% post.recent_comments.each do |comment| %>
+            <strong><%= @users.find(comment.user_id).name %>:</strong> <%= comment.content %>
+            <br>
+          <% end %>
+        <% end %>
+      <% else %>
+        <strong>No comments yet.</strong>
+      <% end %>
+    </p>
+  </div>
+</div>

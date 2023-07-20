@@ -8,7 +8,7 @@
   </div>
 
   <% @user.recent_posts.each do |post| %>
-    <%= render partial: "post_card", locals: { user: @user, post: post } %>
+    <%= render partial: "post_card_truncated", locals: { user: @user, post: post } %>
   <% end %>
 
   <div class="row m-3 justify-content-center">
