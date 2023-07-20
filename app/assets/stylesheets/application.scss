@@ -65,6 +65,10 @@ a.btn {
   width: auto;
 }
 
+.inline {
+  display: inline !important;
+}
+
 @media only screen and (min-width: 768px) {
   body {
     margin-left: -3.5rem;

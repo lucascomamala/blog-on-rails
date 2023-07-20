@@ -1,7 +1,11 @@
 <div class="row m-3 justify-content-center">
   <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-    <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
-    <p class="m-0"><%= post.text %></p>
+    <% if current_page?(controller: 'posts', action: 'index') %>
+      <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
+    <% else %>
+      <%= content_tag(:h4, post.title, class: "display-6 inline") %> by <%= link_to(post.author.name, 'users/'+post.author.id.to_s, class: "inline") %>
+    <% end %>
+    <p class="m-0 mt-3"><%= post.text %></p>
     <span class="user-card-posts">
       Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
     </span>
