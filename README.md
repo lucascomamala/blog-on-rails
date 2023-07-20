@@ -83,8 +83,9 @@ $  bundle install
 To run the project locally, execute the following command:
 
 ```sh
-$  rake db:create
-$  rake db:migrate
+$  rails db:create
+$  rails db:migrate
+$  rails db:seed
 $  rails server
 ```
 
