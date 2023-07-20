@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comments = Comment.all
+    @new_comment = Comment.new
   end
 
   def new
