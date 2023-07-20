@@ -1,0 +1,20 @@
+<div class="row m-3 justify-content-center">
+  <div class="col-md-12 col-lg-9 offset-md-1 show-card">
+    <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
+    <p class="m-0"><%= post.text %></p>
+    <span class="user-card-posts">
+      Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+    </span>
+  </div>
+</div>
+
+<div class="row m-3 justify-content-center comments-row">
+  <div class="col-md-12 col-lg-9 offset-md-1 show-card">
+    <p>
+      <% post.comments.each do |comment| %>
+        <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
+        <br>
+      <% end %>
+    </p>
+  </div>
+</div>

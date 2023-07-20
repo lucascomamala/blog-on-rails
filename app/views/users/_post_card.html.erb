@@ -1,8 +1,8 @@
 <div class="row m-3 justify-content-center">
   <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-    <%= link_to(content_tag(:h5, post.title), user.id.to_s+'/posts/'+post.id.to_s) %>
+    <%= link_to(content_tag(:h4, post.title, class: "display-6"), user.id.to_s+'/posts/'+post.id.to_s) %>
     <p class="m-0"><%= post.text %></p>
-    <span class="user-card-posts">
+    <span>
       Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
     </span>
   </div>

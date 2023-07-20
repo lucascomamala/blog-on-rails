@@ -37,7 +37,7 @@ a {
 }
 
 a .user-img:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .show-card a {
@@ -56,9 +56,13 @@ a .user-img:hover {
   margin: 1rem 0 0 0;
 }
 
-.show-card span {
+.show-card>span {
   float: right;
   font-size: 0.8rem;
+}
+
+.comments-row p {
+  font-size: 0.9rem;
 }
 
 a.btn {
