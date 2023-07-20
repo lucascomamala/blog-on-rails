@@ -8,9 +8,9 @@
   </div>
   <div class="show-card col-md-8 col-lg-6">
     <% if current_page?('/') || current_page?('/users') %>
-      <%= link_to(content_tag(:h2, user.name), 'users/'+user.id.to_s) %>
+      <%= link_to(content_tag(:h2, user.name, class: "m-0 mt-2"), 'users/'+user.id.to_s) %>
     <% else %>
-      <%= content_tag(:h2, user.name) %>
+      <%= content_tag(:h2, user.name, class: "m-0 mt-2") %>
     <% end %>
     <span>
       Number of posts: <%= user.posts_counter %>
