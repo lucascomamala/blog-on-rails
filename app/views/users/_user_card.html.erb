@@ -1,0 +1,11 @@
+<div class="row m-3 justify-content-center align-items-center">
+  <div class="col-md-3 text-center text-md-end">
+    <%= link_to(image_tag(user.photo, class: "user-img"), 'users/'+user.id.to_s) %>
+  </div>
+  <div class="show-card col-md-6">
+    <%= link_to(content_tag(:h2, user.name, class: "user-card-name"), 'users/'+user.id.to_s) %>
+    <span class="user-card-posts">
+      Number of posts: <%= user.posts_counter %>
+    </span>
+  </div>
+</div>
