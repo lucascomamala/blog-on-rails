@@ -1,5 +1,5 @@
 <div class="container">
   <% @users.order(id: :asc).each do |user| %>
-    <%= render partial: "user_card", locals: { user: user, full: true } %>
+    <%= render partial: 'users/partials/user_card', locals: { user: user, full: true } %>
   <% end %>
 </div>
