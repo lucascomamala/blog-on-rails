@@ -18,6 +18,11 @@
         <%= link_to "New Post", new_user_post_path(@current_user), class: "btn btn-primary" %>
       </span>
     </header>
+    <% flash.each do |type, msg| %>
+      <div class="ms-5 me-5 alert alert-success" role="alert">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
