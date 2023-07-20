@@ -11,13 +11,7 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to("", root_path, class: "nav-logo") %>
-      <%= link_to("BlogOnRails", root_path, class: "nav-title display-1") %>
-      <span class="new-post-btn">
-        <%= link_to "New Post", new_user_post_path(@current_user), class: "btn btn-primary" %>
-      </span>
-    </header>
+    <%= render 'layouts/navigation' %>
     <% flash.each do |type, msg| %>
       <div class="ms-5 me-5 alert alert-success" role="alert">
         <%= msg %>
