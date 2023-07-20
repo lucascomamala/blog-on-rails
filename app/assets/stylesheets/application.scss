@@ -25,10 +25,10 @@ body {
   background-color: #f5f5f5;
 }
 
-a {
+/* a {
   color: black;
   text-decoration: none;
-}
+} */
 
 .user-img {
   width: 150px;
@@ -55,10 +55,6 @@ a .user-img:hover {
 .show-card > span {
   float: right;
   font-size: 0.8rem;
-}
-
-.comments-row p {
-  font-size: 0.9rem;
 }
 
 a.btn {

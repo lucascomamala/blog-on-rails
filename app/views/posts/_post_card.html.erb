@@ -3,12 +3,12 @@
     <% if current_page?(controller: 'posts', action: 'index') %>
       <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
     <% else %>
-      <%= content_tag(:h4, post.title, class: "display-6 inline") %> by <%= link_to(post.author.name, 'users/'+post.author.id.to_s, class: "inline") %>
+      <%= content_tag(:h4, post.title, class: "display-6 inline") %> by <%= link_to(post.author.name, @user, class: "inline") %>
     <% end %>
-    <p class="m-0 mt-3"><%= post.text %></p>
-    <span class="user-card-posts">
+    <p class="mt-4"><%= post.text %></p>
+    <span><small>
       Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
-    </span>
+    </small></span>
   </div>
 </div>
 
@@ -16,9 +16,17 @@
   <div class="col-md-12 col-lg-9 offset-md-1 show-card">
     <p class="m-0">
       <% if !post.comments.empty? %>
-        <% post.comments.each do |comment| %>
-          <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
-          <br>
+        <% if current_page?(controller: 'posts', action: 'index') %>
+          <% post.recent_comments.each do |comment| %>
+            <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
+            <br>
+          <% end %>
+        <%# For the show page %>
+        <% else %>
+          <% post.comments.each do |comment| %>
+            <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
+            <br>
+          <% end %>
         <% end %>
       <% else %>
         <strong>No comments yet.</strong>
