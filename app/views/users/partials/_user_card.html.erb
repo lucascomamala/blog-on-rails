@@ -1,8 +1,8 @@
 <div class="row m-3 justify-content-center align-items-center">
-  <div class="col-md-4 col-lg-3 text-center text-md-end">
+  <div class="col-md-3 text-center text-md-end">
     <%= render_type(local_assigns[:user]) %>
   </div>
-  <div class="show-card col-md-8 col-lg-6">
+  <div class="show-card col-md-8 col-lg-6 col-xl-5">
     <% if local_assigns[:full] %>
       <%= link_to(content_tag(:h2, user.name, class: "m-0 mt-2"), local_assigns[:user]) %>
     <% else %>
