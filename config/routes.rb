@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root 'users#index'
+  root :to => redirect('users')
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :new, :create, :show] do
       resources :comments, only: [:new, :create]

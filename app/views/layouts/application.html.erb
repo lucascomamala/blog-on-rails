@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to("", root_path, class: "nav-logo") %>
+      <%= link_to("BlogOnRails", root_path, class: "nav-title display-1") %>
+    </header>
     <%= yield %>
   </body>
 </html>
