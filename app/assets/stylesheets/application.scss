@@ -36,22 +36,13 @@ a {
   border-radius: 50%;
 }
 
-.user-img:hover {
-  opacity: 0.8;
+a .user-img:hover {
+  opacity: 0.6;
 }
 
-.user-card a {
+.show-card a {
   display: block;
   width: fit-content;
-}
-
-.user-card-name {
-  margin: 1rem 0 0 0;
-}
-
-.user-card-posts {
-  float: right;
-  font-size: 0.8rem;
 }
 
 .show-card {
@@ -59,4 +50,23 @@ a {
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   padding: 1rem;
+}
+
+.show-card h2 {
+  margin: 1rem 0 0 0;
+}
+
+.show-card span {
+  float: right;
+  font-size: 0.8rem;
+}
+
+a.btn {
+  width: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    margin-left: -3.5rem;
+  }
 }
