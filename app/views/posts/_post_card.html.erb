@@ -1,36 +1,21 @@
 <div class="row m-3 justify-content-center">
   <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-    <% if current_page?(controller: 'posts', action: 'index') %>
-      <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
-    <% else %>
+     <% if local_assigns[:full] %>
       <%= content_tag(:h4, post.title, class: "display-6 inline") %> by <%= link_to(post.author.name, @user, class: "inline") %>
+    <% else %>
+      <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
     <% end %>
-    <p class="mt-4"><%= post.text %></p>
+    <%= simple_format(post.text) %>
+    <% if local_assigns[:full] %>
+      <% pre_like = @post.likes.find { |like| like.user_id == @current_user.id } %>
+      <% if pre_like %>
+        <%= button_to image_tag("heart-solid.svg", width: 30), user_post_like_path(@user, post, pre_like), method: :delete, class: "like-btn" %>
+      <% else %>
+        <%= button_to image_tag("heart-regular.svg", width: 30), user_post_likes_path(@user, post, @like), method: :post, class: "like-btn" %>
+      <% end %>
+    <% end %>
     <span><small>
       Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
     </small></span>
-  </div>
-</div>
-
-<div class="row m-3 justify-content-center comments-row">
-  <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-    <p class="m-0">
-      <% if !post.comments.empty? %>
-        <% if current_page?(controller: 'posts', action: 'index') %>
-          <% post.recent_comments.each do |comment| %>
-            <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
-            <br>
-          <% end %>
-        <%# For the show page %>
-        <% else %>
-          <% post.comments.each do |comment| %>
-            <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
-            <br>
-          <% end %>
-        <% end %>
-      <% else %>
-        <strong>No comments yet.</strong>
-      <% end %>
-    </p>
   </div>
 </div>

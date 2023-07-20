@@ -1,3 +1,5 @@
 <div class="container">
-  <%= render partial: "post_card", locals: { post: @post, users: @users } %>
+  <%= render partial: "post_card", locals: { post: @post, full: true } %>
+  <%= render partial: "comments_card", locals: { post: @post, full: true } %>
+  <%= render partial: "new_comment" %>
 </div>
