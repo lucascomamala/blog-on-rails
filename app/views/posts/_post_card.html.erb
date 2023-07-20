@@ -10,10 +10,14 @@
 
 <div class="row m-3 justify-content-center comments-row">
   <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-    <p>
-      <% post.comments.each do |comment| %>
-        <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
-        <br>
+    <p class="m-0">
+      <% if !post.comments.empty? %>
+        <% post.comments.each do |comment| %>
+          <strong><%= users.find(comment.author_id).name %>:</strong> <%= comment.text %>
+          <br>
+        <% end %>
+      <% else %>
+        <strong>No comments yet.</strong>
       <% end %>
     </p>
   </div>
