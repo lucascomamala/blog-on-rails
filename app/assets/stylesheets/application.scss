@@ -107,12 +107,6 @@ a.btn {
   display: inline !important;
 }
 
-@media only screen and (min-width: 768px) {
-  body {
-    margin-left: -3.5rem;
-  }
-}
-
 @media (min-width: 1024px) {
   .nav-logo {
     height: 112px;
@@ -136,7 +130,7 @@ a.btn {
   header {
     margin-right: 1rem;
   }
-  
+
   .nav-logo {
     top: 8%;
     left: 50%;
