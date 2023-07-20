@@ -115,6 +115,15 @@ a.btn {
   margin-top: 1rem;
 }
 
+.like-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.like-btn img {
+  filter: invert(22%) sepia(83%) saturate(6527%) hue-rotate(355deg) brightness(100%) contrast(124%);
+}
+
 @media (min-width: 1024px) {
   .nav-logo {
     height: 112px;
