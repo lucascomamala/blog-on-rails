@@ -9,9 +9,9 @@
     <% if local_assigns[:full] %>
       <% pre_like = @post.likes.find { |like| like.user_id == @current_user.id } %>
       <% if pre_like %>
-        <%= button_to image_tag("heart-solid.svg", width: 30), '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/likes', method: :delete, class: "like-btn" %>
+        <%= button_to image_tag("heart-solid.svg", width: 30), user_post_like_path(@user, post, pre_like), method: :delete, class: "like-btn" %>
       <% else %>
-        <%= button_to image_tag("heart-regular.svg", width: 30), '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/likes', method: :post, class: "like-btn" %>
+        <%= button_to image_tag("heart-regular.svg", width: 30), user_post_likes_path(@user, post, @like), method: :post, class: "like-btn" %>
       <% end %>
     <% end %>
     <span><small>
