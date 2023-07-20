@@ -5,7 +5,7 @@ RSpec.describe 'Posts', type: :request do
     let(:user) { FactoryBot.create(:user) }
     
     before :each do
-      get user_posts_path(1)
+      get user_posts_path(user.id)
     end
 
     it 'should have a http status of 200(correct status)' do

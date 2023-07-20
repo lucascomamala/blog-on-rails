@@ -5,6 +5,8 @@ class Comment < ApplicationRecord
   after_save :increment_comments_counter
   after_destroy :decrement_comments_counter
 
+  validates :text, presence: true
+
   private
 
   def increment_comments_counter
