@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = Comment.all
     @new_comment = Comment.new
+    @new_like = Like.new
   end
 
   def new
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
     @post.author = @current_user
 
     if @post.save
-      flash[:success] = "Post created successfully"
+      flash[:success] = 'Post created successfully'
       redirect_to root_path
     else
       render :new

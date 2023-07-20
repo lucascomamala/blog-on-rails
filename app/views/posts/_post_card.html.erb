@@ -6,6 +6,12 @@
       <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
     <% end %>
     <p class="mt-4"><%= post.text %></p>
+    <% if local_assigns[:full] %>
+      <% heart = '<i class="fa-regular fa-heart"></i>'.html_safe %>
+      <%= form_with(model: @new_like, url: '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/likes', method: :post) do |form| %>
+        <%= link_to(heart, '#', method: :post, :onclick=>"$('.search_form').submit()") %>
+      <% end %>
+    <% end %>
     <span><small>
       Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
     </small></span>
