@@ -1,0 +1,18 @@
+@media (min-width: 1024px) {
+  .nav-logo {
+    height: 112px;
+    width: 112px;
+  }
+
+  .nav-logo::after {
+    height: 32px;
+    left: 11px;
+    top: 33px;
+    width: 90px;
+  }
+
+  .nav-title {
+    margin-left: 9rem;
+    top: 15px;
+  }
+}

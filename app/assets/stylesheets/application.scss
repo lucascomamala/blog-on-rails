@@ -15,6 +15,8 @@
  */
 
 @import "bootstrap";
+@import "responsive/desktop";
+@import "responsive/mobile";
 
 * {
   padding: 0;
@@ -122,39 +124,4 @@ a.btn {
 
 .like-btn img {
   filter: invert(22%) sepia(83%) saturate(6527%) hue-rotate(355deg) brightness(100%) contrast(124%);
-}
-
-@media (min-width: 1024px) {
-  .nav-logo {
-    height: 112px;
-    width: 112px;
-  }
-
-  .nav-logo::after {
-    height: 32px;
-    left: 11px;
-    top: 33px;
-    width: 90px;
-  }
-
-  .nav-title {
-    margin-left: 9rem;
-    top: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    margin-right: 1rem;
-  }
-
-  .nav-logo {
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .nav-title {
-    display: none;
-  }
 }
