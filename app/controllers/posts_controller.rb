@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = Comment.all
     @new_comment = Comment.new
-    @new_like = Like.new
+    @like = Like.new
   end
 
   def new

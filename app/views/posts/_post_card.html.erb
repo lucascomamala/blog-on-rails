@@ -5,11 +5,13 @@
     <% else %>
       <%= link_to(content_tag(:h4, post.title, class: "display-6"), 'posts/'+post.id.to_s) %>
     <% end %>
-    <p class="mt-4"><%= post.text %></p>
+    <%= simple_format(post.text) %>
     <% if local_assigns[:full] %>
-      <% heart = '<i class="fa-regular fa-heart"></i>'.html_safe %>
-      <%= form_with(model: @new_like, url: '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/likes', method: :post) do |form| %>
-        <%= link_to(heart, '#', method: :post, :onclick=>"$('.search_form').submit()") %>
+      <% pre_like = @post.likes.find { |like| like.user_id == @current_user.id } %>
+      <% if pre_like %>
+        <%= button_to 'Unlike', '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/likes', method: :delete %>
+      <% else %>
+        <%= button_to 'Like', '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/likes', method: :post %>
       <% end %>
     <% end %>
     <span><small>
