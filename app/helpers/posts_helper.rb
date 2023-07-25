@@ -13,7 +13,7 @@ module PostsHelper
       end
     else
       post.recent_comments.each do |comment|
-        built_comments += "<strong>#{@users.find(comment.user_id).name}:</strong> #{comment.content}<br>"
+        built_comments += "<strong>#{User.find(comment.user_id).name}:</strong> #{comment.content}<br>"
       end
     end
 
