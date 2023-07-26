@@ -1,7 +1,9 @@
 <header>
   <%= link_to("", root_path, class: "nav-logo") %>
   <%= link_to("BlogOnRails", root_path, class: "nav-title display-1") %>
-  <span class="new-post-btn">
-    <%= link_to "New Post", new_user_post_path(@current_user), class: "btn btn-primary" %>
-  </span>
+  <% if @current_user %>
+    <span class="new-post-btn">
+      <%= link_to "New Post", new_user_post_path(@current_user), class: "btn btn-primary" %>
+    </span>
+  <% end %>
 </header>
