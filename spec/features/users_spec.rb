@@ -7,7 +7,7 @@ RSpec.describe 'Users' do
     before do
       visit users_path
     end
-
+    
     it 'Should render Lucas in the index page' do
       expect(page).to have_content('Lucas')
     end
