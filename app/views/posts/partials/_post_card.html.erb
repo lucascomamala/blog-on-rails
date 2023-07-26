@@ -1,0 +1,13 @@
+<div class="row m-3 justify-content-center">
+  <div class="col-md-12 col-lg-9 offset-md-1 show-card">
+    <%= post_render_type(post) %>
+    
+    <%= simple_format(post.text) %>
+    
+    <%= render_like_btn(post) %>
+    
+    <span><small>
+      Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+    </small></span>
+  </div>
+</div>

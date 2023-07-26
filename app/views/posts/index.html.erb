@@ -1,7 +1,7 @@
 <div class="container">
-  <%= render partial: "users/user_card", locals: { user: @user } %>
+  <%= render partial: "users/partials/user_card", locals: { user: @user } %>
   <% @posts.order(updated_at: :desc).each do |post| %>
-    <%= render partial: "post_card", locals: { post: post } %>
-    <%= render partial: "comments_card", locals: { post: post } %>
+    <%= render partial: "posts/partials/post_card", locals: { post: post } %>
+    <%= render partial: "posts/partials/comments_card", locals: { post: post } %>
   <% end %>
 </div>

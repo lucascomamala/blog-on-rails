@@ -1,17 +1,12 @@
 <div class="container">
-  <%= render partial: "user_card", locals: { user: @user } %>
-  <div class="row m-3 justify-content-center">
-    <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-      <h4 class="display-3">Bio</h4>
-      <p><%= @user.bio %></P>
-    </div>
-  </div>
+  <%= render partial: 'users/partials/user_card', locals: { user: @user } %>
+  <%= render 'users/partials/user_bio' %>
 
   <% @user.recent_posts.each do |post| %>
-    <%= render partial: "post_card_truncated", locals: { user: @user, post: post } %>
+    <%= render partial: 'users/partials/post_card_truncated', locals: { user: @user, post: post } %>
   <% end %>
 
-  <div class="row m-3 justify-content-center">
-    <%= link_to("See all posts...", @user.id.to_s+'/posts', class: "btn btn-outline-secondary") %>
+  <div class='row m-3 justify-content-center'>
+    <%= link_to('See all posts...', @user.id.to_s+'/posts', class: 'btn btn-outline-secondary') %>
   </div>
 </div>

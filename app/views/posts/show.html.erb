@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render partial: "post_card", locals: { post: @post, full: true } %>
-  <%= render partial: "comments_card", locals: { post: @post, full: true } %>
-  <%= render partial: "new_comment" %>
+  <%= render partial: "posts/partials/post_card", locals: { post: @post, full: true } %>
+  <%= render partial: "posts/partials/comments_card", locals: { post: @post } %>
+  <%= render template: "comments/new" %>
 </div>
