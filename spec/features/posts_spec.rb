@@ -103,5 +103,23 @@ RSpec.describe 'Posts' do
       expect(page).to have_content(comment5.text)
       expect(page).to have_content(comment6.text)
     end
+
+    it 'When I click on author\'s name it take me to user\'s profile' do
+      click_on user.name
+      expect(page).to have_current_path(user_path(user))
+    end
+
+    it 'When I click the like button it increases the likes counter by 1' do
+      expect(page).to have_content("Likes: 0")
+      click_on(class: 'like-btn')
+      expect(page).to have_content("Likes: 1")
+    end
+
+    it 'When I click the dislike button it decreases the likes counter by 1' do
+      expect(page).to have_content("Likes: 0")
+      click_on(class: 'like-btn')
+      click_on(class: 'like-btn')
+      expect(page).to have_content("Likes: 0")
+    end
   end
 end
