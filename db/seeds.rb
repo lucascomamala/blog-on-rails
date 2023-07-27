@@ -8,6 +8,19 @@
 
 require 'faker'
 
+admin = User.new(
+  email: 'admin@admin.com',
+  password: '123456',
+  password_confirmation: '123456',
+  name: 'admin',
+  photo: Faker::LoremFlickr.image,
+  bio: Faker::Job.title,
+  posts_counter: 0,
+  role: 'admin'
+)
+admin.skip_confirmation!
+admin.save!
+
 6.times do
   user = User.create!(
     email: Faker::Internet.email,
