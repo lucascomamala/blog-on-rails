@@ -100,6 +100,12 @@ $  rails server
 - GitHub: [@lucascomamala](https://github.com/lucascomamala)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-comamala/)
 
+👤 **Felipe Haybar Valenzuela**
+
+- GitHub: [@Feliverse](https://github.com/Feliverse)
+- Twitter: [@FelipeHaybar](https://twitter.com/FelipeHaybar)
+- LinkedIn: [FelipeHaybar](https://linkedin.com/in/FelipeHaybar)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>

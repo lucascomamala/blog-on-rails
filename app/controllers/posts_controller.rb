@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @users = User.all
     @user = User.find(params[:user_id])
-    @posts = Post.where(author: @user)
+    @posts = Post.includes([:author]).includes([:comments]).where(author: @user).order(updated_at: :desc)
     @comments = Comment.all
   end
 

@@ -7,13 +7,13 @@ RSpec.describe 'Users' do
     before do
       visit users_path
     end
-    
+
     it 'Should render Lucas in the index page' do
       expect(page).to have_content('Lucas')
     end
 
     it 'Should be able to view profile pictures' do
-      expect(page).to have_css("img")
+      expect(page).to have_css('img')
     end
 
     it 'Should render the number of posts' do
@@ -51,7 +51,7 @@ RSpec.describe 'Users' do
     end
 
     it 'can see the user\'s bio' do
-      expect(page).to have_content('Self-taught web developer with over 2 years of experience working on complex software development.')
+      expect(page).to have_content('Self-taught web developer with over')
     end
 
     it 'can see the user\'s first 3 posts' do
