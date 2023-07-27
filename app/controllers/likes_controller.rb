@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     if already_liked?
       flash[:notice] = 'You can\'t like more than once'
     else
-      @post.likes.create(user_id: @current_user.id)
+      @post.likes.create(user_id: current_user.id)
     end
     redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
   end
@@ -27,7 +27,7 @@ class LikesController < ApplicationController
   end
 
   def already_liked?
-    Like.where(user_id: @current_user.id, post_id: params[:post_id]).exists?
+    Like.where(user_id: current_user.id, post_id: params[:post_id]).exists?
   end
 
   def find_like
