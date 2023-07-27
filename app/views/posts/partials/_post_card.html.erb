@@ -8,7 +8,7 @@
       <span class='col'>
         <%= render_like_btn(post) %>
 
-        <% if can? :destroy, @post %>
+        <% if can? :destroy, post %>
           <%= button_to(image_tag("trash.svg", size:'28x28'), user_post_path(@user, post), method: :delete, class: 'trash-icon') %>
         <% end %>
       </span>
