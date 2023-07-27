@@ -59,6 +59,10 @@ RSpec.describe 'Posts' do
       click_on post.title
       expect(page).to have_current_path(user_post_path(user, post))
     end
+
+    it 'can see pagination buttons.' do
+      expect(page).to have_content('Pagination')
+    end
   end
 
   describe 'Post #show' do
