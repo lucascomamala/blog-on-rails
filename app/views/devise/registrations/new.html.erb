@@ -4,16 +4,16 @@
 <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <%= f.text_field :name %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    <%= f.text_field :photo %>
-    <%= f.text_area :bio %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <small><em>(<%= @minimum_password_length %> characters minimum)</em></small>
-    <% end %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    <%= f.submit "Sign up" %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= f.text_field :photo %>
+  <%= f.text_area :bio %>
+  <%= f.password_field :password, autocomplete: "new-password" %>
+  <% if @minimum_password_length %>
+    <small><em>(<%= @minimum_password_length %> characters minimum)</em></small>
+  <% end %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <%= f.submit "Sign up" %>
 
 <% end %>
 
