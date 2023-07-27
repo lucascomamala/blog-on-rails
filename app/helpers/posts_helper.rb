@@ -11,6 +11,8 @@ module PostsHelper
   def render_like_btn(post)
     return unless current_page?(user_post_path(post.author, post))
 
+    return if !user_signed_in?
+
     pre_like = @post.likes.find { |like| like.user_id == current_user.id }
     if pre_like
       button_to(image_tag('heart-solid.svg', width: 30), user_post_like_path(@user, post, pre_like), method: :delete,
