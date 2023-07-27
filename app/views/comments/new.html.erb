@@ -1,13 +1,17 @@
 <div class="row m-3 justify-content-center comments-row">
   <div class="col-md-12 col-lg-9 offset-md-1 show-card">
-    <%= form_with(model: @new_comment, url: '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/comments', method: :post) do |form| %>
-      <div class="mb-3">
-        <%= form.label :comment, class: "form-label" %>
-        <%= form.text_field :text, class: "form-control", required: true %>
-      </div>
-      <div>
-        <%= form.submit "Leave Comment", class: "btn btn-success" %>
-      </div>
+    <% if user_signed_in? %>
+      <%= form_with(model: @new_comment, url: '/users/'+params[:user_id].to_s+'/posts/'+params[:id].to_s+'/comments', method: :post) do |form| %>
+        <div class="mb-3">
+          <%= form.label :comment, class: "form-label" %>
+          <%= form.text_field :text, class: "form-control", required: true %>
+        </div>
+        <div>
+          <%= form.submit "Leave Comment", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center">You must be signed in to leave a comment.</p>
     <% end %>
   </div>
 </div>

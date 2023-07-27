@@ -3,6 +3,9 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  attribute :comments_counter, default: 0
+  attribute :likes_counter, default: 0
+
   after_save :increment_posts_counter
   after_destroy :decrement_posts_counter
 

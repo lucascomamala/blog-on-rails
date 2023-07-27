@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(text: params.require(:comment).permit(:text)[:text], user: @current_user,
+    @comment = Comment.new(text: params.require(:comment).permit(:text)[:text], user: current_user,
                            post: Post.find(params[:post_id]))
 
     if @comment.save
