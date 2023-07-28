@@ -6,6 +6,11 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = Post.includes([:author]).includes([:comments]).where(author: @user).order(updated_at: :desc)
     @comments = Comment.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @posts }
+    end
   end
 
   def show
