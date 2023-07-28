@@ -9,8 +9,15 @@ class CommentsController < ApplicationController
                            post: Post.find(params[:post_id]))
 
     if @comment.save
-      flash[:success] = 'Comment created successfully'
-      redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
+      
+      
+      respond_to do |format|
+        format.html do
+          flash[:success] = 'Comment created successfully'
+          redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
+        end
+          format.json { render json: @comments }
+      end
     else
       render :new
     end
