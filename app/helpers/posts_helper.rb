@@ -30,6 +30,11 @@ module PostsHelper
 
     if current_page?(user_post_path(post.author, post))
       post.comments.each do |comment|
+        if can? :destroy, comment
+          b = button_to(image_tag('trash.svg', size: '15x15'), user_post_comment_path(@user, post, comment),
+                        method: :delete, class: 'trash-icon')
+          built_comments += b
+        end
         built_comments += "<strong>#{User.find(comment.author_id).name}:</strong> #{comment.text}<br>"
       end
     else

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @users = User.all
     @user = User.find(params[:user_id])
@@ -28,6 +30,12 @@ class PostsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy!
+    redirect_to user_path(@post.author), notice: 'You deleted a post!'
   end
 
   private
