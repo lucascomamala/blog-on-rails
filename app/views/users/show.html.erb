@@ -1,0 +1,12 @@
+<div class="container">
+  <%= render partial: 'users/partials/user_card', locals: { user: @user } %>
+  <%= render 'users/partials/user_bio' %>
+
+  <% @user.recent_posts.each do |post| %>
+    <%= render partial: 'users/partials/post_card_truncated', locals: { user: @user, post: post } %>
+  <% end %>
+
+  <div class='row m-3 justify-content-center'>
+    <%= link_to('See all posts...', @user.id.to_s+'/posts', class: 'btn btn-outline-secondary') %>
+  </div>
+</div>

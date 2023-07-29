@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  header {
+    margin-right: 1rem;
+  }
+
+  .nav-logo {
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-title {
+    display: none;
+  }
+}

@@ -1,0 +1,7 @@
+<div class="show-card container">
+<%= bootstrap_form_with(model: @new_post, url: user_posts_path, method: :post) do |form| %>
+  <%= form.text_field :title, class: "form-control", required: true %>
+  <%= form.text_area :text, rows: 15, class: "form-control", required: true %>
+  <%= form.submit "Create Post", class: "btn btn-primary" %>
+<% end %>
+</div>

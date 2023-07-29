@@ -1,0 +1,83 @@
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+@import "responsive/desktop";
+@import "responsive/mobile";
+@import "partials/navigation";
+
+body {
+  background-color: #f5f5f5;
+}
+
+header {
+  margin: 2rem 6rem 6rem 10rem;
+  height: 6rem;
+}
+
+.user-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+a .user-img:hover {
+  opacity: 0.7;
+}
+
+.show-card a {
+  display: block;
+  width: fit-content;
+}
+
+.show-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+}
+
+.show-card > span {
+  float: right;
+  font-size: 0.8rem;
+}
+
+a.btn {
+  width: auto;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.fa-heart {
+  color: red !important;
+}
+
+.show-card p:first-of-type {
+  margin-top: 1rem;
+}
+
+.like-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.like-btn img {
+  filter: invert(22%) sepia(83%) saturate(6527%) hue-rotate(355deg) brightness(100%) contrast(124%);
+}
+
+.nav-btns form {
+  display: inline-block;
+}
+
+.trash-icon {
+  border: none;
+  background-color: transparent;
+}
+
+.post-helpers form {
+  display: inline-block;
+}
+
+.comments-row form {
+  display: inline-block;
+}
