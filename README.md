@@ -1,3 +1,5 @@
+![Capture](https://github.com/lucascomamala/blog-on-rails/assets/10102977/cf60b28a-af11-452f-b779-a442f0c61727)
+
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -5,6 +7,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [🚀 Live Demo](#live-demo)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -26,6 +29,12 @@
 # 📖 Blog on Rails <a name="about-project"></a>
 
 Blog app built with RoR.
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+[Live Demo Link](https://blog-on-rails.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
